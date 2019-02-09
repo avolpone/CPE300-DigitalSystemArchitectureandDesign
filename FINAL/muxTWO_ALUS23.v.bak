@@ -1,0 +1,21 @@
+module  muxTWO_ALUS23(
+BUS, 
+ALUS2,
+ALUS3, 
+OUT);
+
+input [7:0] BUS;
+input ALUS5, ALUS6;
+
+output reg [7:0] OUT;
+
+always @(*)
+begin
+ case({ALUS2,ALUS3}) 
+    00 : OUT = (AC & BUS);
+    01 : OUT = (AC | BUS);
+	 10 : OUT = (AC^BUS);
+ endcase 
+end
+
+endmodule 

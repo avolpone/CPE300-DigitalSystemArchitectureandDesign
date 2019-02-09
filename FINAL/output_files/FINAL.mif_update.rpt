@@ -1,0 +1,76 @@
+MIF/HEX Update report for FINAL
+Wed Dec 02 09:59:14 2015
+Quartus II 64-Bit Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. MIF/HEX Update Summary
+  3. MIF/HEX Update Processed Files
+  4. MIF/HEX Update Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------+
+; MIF/HEX Update Summary                                        ;
++-----------------------+---------------------------------------+
+; MIF/HEX Update Status ; Successful - Wed Dec 02 09:59:14 2015 ;
+; Revision Name         ; FINAL                                 ;
+; Top-level Entity Name ; CENTRAL_PROCESSOR                     ;
+; Family                ; Cyclone IV E                          ;
+; Device                ; EP4CE115F29C7                         ;
++-----------------------+---------------------------------------+
+
+
++------------------------------------------------------------------------+
+; MIF/HEX Update Processed Files                                         ;
++------------------------------------------------------------------------+
+; File Name                                                              ;
++------------------------------------------------------------------------+
+; C:/Users/Aaron/Documents/CPE 300/FINAL/db/final.ram0_ram_15119.hdl.mif ;
++------------------------------------------------------------------------+
+
+
++-------------------------+
+; MIF/HEX Update Messages ;
++-------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit MIF/HEX Update
+    Info: Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
+    Info: Processing started: Wed Dec 02 09:59:14 2015
+Info: Command: quartus_cdb FINAL -c FINAL --update_mif
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Aaron/Documents/CPE 300/FINAL/db/final.ram0_ram_15119.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Aaron/Documents/CPE 300/FINAL/db/final.ram0_ram_15119.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Aaron/Documents/CPE 300/FINAL/db/final.ram0_ram_15119.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Aaron/Documents/CPE 300/FINAL/db/final.ram0_ram_15119.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (39024): Processed the following Memory Initialization File(s)
+    Info (39025): Processed Memory Initialization File C:/Users/Aaron/Documents/CPE 300/FINAL/db/final.ram0_ram_15119.hdl.mif
+Info: Quartus II 64-Bit MIF/HEX Update was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 709 megabytes
+    Info: Processing ended: Wed Dec 02 09:59:14 2015
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

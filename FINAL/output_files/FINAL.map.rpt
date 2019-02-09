@@ -1,0 +1,978 @@
+Analysis & Synthesis report for FINAL
+Mon Dec 07 16:57:31 2015
+Quartus II 64-Bit Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Registers Added for RAM Pass-Through Logic
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for DATAPATH:DP|RAM:MEMMODULE|altsyncram:mem_rtl_0|altsyncram_i3g1:auto_generated
+ 16. Parameter Settings for User Entity Instance: DATAPATH:DP|RAM:MEMMODULE
+ 17. Parameter Settings for Inferred Entity Instance: DATAPATH:DP|RAM:MEMMODULE|altsyncram:mem_rtl_0
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "DATAPATH:DP|AC:ADMODULE|Z_CHECK:ZCHECK"
+ 20. Port Connectivity Checks: "DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|adder16bit:ADD16b"
+ 21. Port Connectivity Checks: "DATAPATH:DP|AC:ADMODULE"
+ 22. Port Connectivity Checks: "DATAPATH:DP|R:RMODULE"
+ 23. Port Connectivity Checks: "DATAPATH:DP|DR:DRMODULE"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Dec 07 16:57:30 2015      ;
+; Quartus II 64-Bit Version          ; 15.0.2 Build 153 07/15/2015 SJ Web Edition ;
+; Revision Name                      ; FINAL                                      ;
+; Top-level Entity Name              ; CENTRAL_PROCESSOR                          ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 308                                        ;
+;     Total combinational functions  ; 253                                        ;
+;     Dedicated logic registers      ; 100                                        ;
+; Total registers                    ; 100                                        ;
+; Total pins                         ; 27                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 2,048                                      ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; CENTRAL_PROCESSOR  ; FINAL              ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
++----------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------+---------+
+; CONTROLSTEP.v                    ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/CONTROLSTEP.v                                           ;         ;
+; decoder_op.v                     ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/decoder_op.v                                            ;         ;
+; decoder_time.v                   ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/decoder_time.v                                          ;         ;
+; counter_time.v                   ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/counter_time.v                                          ;         ;
+; CONTROLCOMBO.v                   ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/CONTROLCOMBO.v                                          ;         ;
+; AR.v                             ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/AR.v                                                    ;         ;
+; PC.v                             ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/PC.v                                                    ;         ;
+; DR.v                             ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/DR.v                                                    ;         ;
+; TR.v                             ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/TR.v                                                    ;         ;
+; IR.v                             ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/IR.v                                                    ;         ;
+; R.v                              ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/R.v                                                     ;         ;
+; AC.v                             ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/AC.v                                                    ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/ALU.v                                                   ;         ;
+; adder16bit.v                     ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/adder16bit.v                                            ;         ;
+; z_check.v                        ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/z_check.v                                               ;         ;
+; DATAPATH.v                       ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/DATAPATH.v                                              ;         ;
+; RAM.v                            ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/RAM.v                                                   ;         ;
+; CPU.v                            ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/CPU.v                                                   ;         ;
+; meminit.mif                      ; yes             ; User Memory Initialization File                       ; D:/CPE/FINAL/meminit.mif                                             ;         ;
+; muxFOUR_ALUS7.v                  ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/muxFOUR_ALUS7.v                                         ;         ;
+; muxTHIRD_ALUS56.v                ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/muxTHIRD_ALUS56.v                                       ;         ;
+; muxTWO_ALUS23.v                  ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/muxTWO_ALUS23.v                                         ;         ;
+; muxONE_ALUS1.v                   ; yes             ; User Verilog HDL File                                 ; D:/CPE/FINAL/muxONE_ALUS1.v                                          ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal150.inc                   ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/aglobal150.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_i3g1.tdf           ; yes             ; Auto-Generated Megafunction                           ; D:/CPE/FINAL/db/altsyncram_i3g1.tdf                                  ;         ;
+; db/final.ram0_ram_15119.hdl.mif  ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/CPE/FINAL/db/final.ram0_ram_15119.hdl.mif                         ;         ;
++----------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 308           ;
+;                                             ;               ;
+; Total combinational functions               ; 253           ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 132           ;
+;     -- 3 input functions                    ; 82            ;
+;     -- <=2 input functions                  ; 39            ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 223           ;
+;     -- arithmetic mode                      ; 30            ;
+;                                             ;               ;
+; Total registers                             ; 100           ;
+;     -- Dedicated logic registers            ; 100           ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 27            ;
+; Total memory bits                           ; 2048          ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; CLOCK_ENABLED ;
+; Maximum fan-out                             ; 108           ;
+; Total fan-out                               ; 1300          ;
+; Average fan-out                             ; 3.13          ;
++---------------------------------------------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                        ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                              ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------+--------------+
+; |CENTRAL_PROCESSOR                           ; 253 (1)           ; 100 (0)      ; 2048        ; 0            ; 0       ; 0         ; 27   ; 0            ; |CENTRAL_PROCESSOR                                                                               ; work         ;
+;    |CONTROL_COMB:CU|                         ; 49 (49)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|CONTROL_COMB:CU                                                               ; work         ;
+;    |CONTROL_STEP:CONTROLSTEP|                ; 24 (0)            ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|CONTROL_STEP:CONTROLSTEP                                                      ; work         ;
+;       |counter_time:Ccounter|                ; 5 (5)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|CONTROL_STEP:CONTROLSTEP|counter_time:Ccounter                                ; work         ;
+;       |decoder_op:Odecoder|                  ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|CONTROL_STEP:CONTROLSTEP|decoder_op:Odecoder                                  ; work         ;
+;       |decoder_time:Cdecoder|                ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|CONTROL_STEP:CONTROLSTEP|decoder_time:Cdecoder                                ; work         ;
+;    |DATAPATH:DP|                             ; 179 (40)          ; 97 (0)       ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP                                                                   ; work         ;
+;       |AC:ADMODULE|                          ; 63 (0)            ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|AC:ADMODULE                                                       ; work         ;
+;          |ALU:ALUMOD|                        ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD                                            ; work         ;
+;             |adder16bit:ADD16b|              ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|adder16bit:ADD16b                          ; work         ;
+;             |muxONE_ALUS1:MUX1|              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxONE_ALUS1:MUX1                          ; work         ;
+;             |muxTHIRD_ALUS56:MUX3|           ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3                       ; work         ;
+;             |muxTWO_ALUS23:MUX2|             ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2                         ; work         ;
+;          |Z_CHECK:ZCHECK|                    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|AC:ADMODULE|Z_CHECK:ZCHECK                                        ; work         ;
+;       |AR:ARMODULE|                          ; 16 (16)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|AR:ARMODULE                                                       ; work         ;
+;       |DR:DRMODULE|                          ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|DR:DRMODULE                                                       ; work         ;
+;       |IR:IRMODULE|                          ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|IR:IRMODULE                                                       ; work         ;
+;       |PC:PCMODULE|                          ; 36 (36)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|PC:PCMODULE                                                       ; work         ;
+;       |R:RMODULE|                            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|R:RMODULE                                                         ; work         ;
+;       |RAM:MEMMODULE|                        ; 24 (24)           ; 33 (33)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|RAM:MEMMODULE                                                     ; work         ;
+;          |altsyncram:mem_rtl_0|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|RAM:MEMMODULE|altsyncram:mem_rtl_0                                ; work         ;
+;             |altsyncram_i3g1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|RAM:MEMMODULE|altsyncram:mem_rtl_0|altsyncram_i3g1:auto_generated ; work         ;
+;       |TR:TRMODULE|                          ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CENTRAL_PROCESSOR|DATAPATH:DP|TR:TRMODULE                                                       ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                        ;
++------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------------+
+; Name                                                                                     ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                             ;
++------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------------+
+; DATAPATH:DP|RAM:MEMMODULE|altsyncram:mem_rtl_0|altsyncram_i3g1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048 ; db/FINAL.ram0_RAM_15119.hdl.mif ;
++------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                  ;
++----------------------------------------------------------------+----------------------------+------------------------+
+; Latch Name                                                     ; Latch Enable Signal        ; Free of Timing Hazards ;
++----------------------------------------------------------------+----------------------------+------------------------+
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[0]   ; CONTROL_COMB:CU|ALUS2      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[0] ; CONTROL_COMB:CU|ALUS5      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[1]   ; CONTROL_COMB:CU|ALUS2      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[1] ; CONTROL_COMB:CU|ALUS5      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[2]   ; CONTROL_COMB:CU|ALUS2      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[2] ; CONTROL_COMB:CU|ALUS5      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[3]   ; CONTROL_COMB:CU|ALUS2      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[3] ; CONTROL_COMB:CU|ALUS5      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[4]   ; CONTROL_COMB:CU|ALUS2      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[4] ; CONTROL_COMB:CU|ALUS5      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[5]   ; CONTROL_COMB:CU|ALUS2      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[5] ; CONTROL_COMB:CU|ALUS5      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[6]   ; CONTROL_COMB:CU|ALUS2      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[6] ; CONTROL_COMB:CU|ALUS5      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[7]   ; CONTROL_COMB:CU|ALUS2      ; yes                    ;
+; DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[7] ; CONTROL_COMB:CU|ALUS5      ; yes                    ;
+; DATAPATH:DP|RAM:MEMMODULE|data_out[0]                          ; CONTROL_COMB:CU|SOFT_RESET ; yes                    ;
+; DATAPATH:DP|RAM:MEMMODULE|data_out[1]                          ; CONTROL_COMB:CU|SOFT_RESET ; yes                    ;
+; DATAPATH:DP|RAM:MEMMODULE|data_out[2]                          ; CONTROL_COMB:CU|SOFT_RESET ; yes                    ;
+; DATAPATH:DP|RAM:MEMMODULE|data_out[3]                          ; CONTROL_COMB:CU|SOFT_RESET ; yes                    ;
+; DATAPATH:DP|RAM:MEMMODULE|data_out[4]                          ; CONTROL_COMB:CU|SOFT_RESET ; yes                    ;
+; DATAPATH:DP|RAM:MEMMODULE|data_out[5]                          ; CONTROL_COMB:CU|SOFT_RESET ; yes                    ;
+; DATAPATH:DP|RAM:MEMMODULE|data_out[6]                          ; CONTROL_COMB:CU|SOFT_RESET ; yes                    ;
+; DATAPATH:DP|RAM:MEMMODULE|data_out[7]                          ; CONTROL_COMB:CU|SOFT_RESET ; yes                    ;
+; Number of user-specified and inferred latches = 24             ;                            ;                        ;
++----------------------------------------------------------------+----------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; DATAPATH:DP|AR:ARMODULE|AR_OUT[2]~en  ; Lost fanout        ;
+; DATAPATH:DP|AR:ARMODULE|AR_OUT[1]~en  ; Lost fanout        ;
+; DATAPATH:DP|AR:ARMODULE|AR_OUT[0]~en  ; Lost fanout        ;
+; DATAPATH:DP|AR:ARMODULE|AR_OUT[3]~en  ; Lost fanout        ;
+; DATAPATH:DP|AR:ARMODULE|AR_OUT[4]~en  ; Lost fanout        ;
+; DATAPATH:DP|AR:ARMODULE|AR_OUT[5]~en  ; Lost fanout        ;
+; DATAPATH:DP|AR:ARMODULE|AR_OUT[6]~en  ; Lost fanout        ;
+; DATAPATH:DP|AR:ARMODULE|AR_OUT[7]~en  ; Lost fanout        ;
+; Total Number of Removed Registers = 8 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 100   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 56    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------+
+; Inverted Register Statistics                             ;
++------------------------------------------------+---------+
+; Inverted Register                              ; Fan out ;
++------------------------------------------------+---------+
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[18] ; 1       ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[17] ; 1       ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[20] ; 1       ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[22] ; 1       ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[24] ; 1       ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[26] ; 1       ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[28] ; 1       ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[30] ; 1       ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[32] ; 1       ;
+; Total number of inverted registers = 9         ;         ;
++------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                           ;
++------------------------------------------------+-------------------------------------+
+; Register Name                                  ; RAM Name                            ;
++------------------------------------------------+-------------------------------------+
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[0]  ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[1]  ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[2]  ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[3]  ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[4]  ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[5]  ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[6]  ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[7]  ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[8]  ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[9]  ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[10] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[11] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[12] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[13] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[14] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[15] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[16] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[17] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[18] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[19] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[20] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[21] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[22] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[23] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[24] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[25] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[26] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[27] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[28] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[29] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[30] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[31] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
+; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0_bypass[32] ; DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0 ;
++------------------------------------------------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |CENTRAL_PROCESSOR|CONTROL_STEP:CONTROLSTEP|counter_time:Ccounter|COUNT[2] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |CENTRAL_PROCESSOR|DATAPATH:DP|PC:PCMODULE|PC_temp[3]                      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |CENTRAL_PROCESSOR|DATAPATH:DP|PC:PCMODULE|PC_temp[8]                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |CENTRAL_PROCESSOR|CONTROL_STEP:CONTROLSTEP|decoder_op:Odecoder|ISUB       ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |CENTRAL_PROCESSOR|DATAPATH:DP|BUS[6]                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Source assignments for DATAPATH:DP|RAM:MEMMODULE|altsyncram:mem_rtl_0|altsyncram_i3g1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------+
+; Assignment                      ; Value              ; From ; To                                     ;
++---------------------------------+--------------------+------+----------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                      ;
++---------------------------------+--------------------+------+----------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATAPATH:DP|RAM:MEMMODULE ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                                ;
+; ADDR_WIDTH     ; 8     ; Signed Integer                                ;
+; RAM_DEPTH      ; 256   ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: DATAPATH:DP|RAM:MEMMODULE|altsyncram:mem_rtl_0 ;
++------------------------------------+---------------------------------+--------------------------+
+; Parameter Name                     ; Value                           ; Type                     ;
++------------------------------------+---------------------------------+--------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                               ; Untyped                  ;
+; AUTO_CARRY_CHAINS                  ; ON                              ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                             ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                ; ON                              ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                             ; IGNORE_CASCADE           ;
+; WIDTH_BYTEENA                      ; 1                               ; Untyped                  ;
+; OPERATION_MODE                     ; DUAL_PORT                       ; Untyped                  ;
+; WIDTH_A                            ; 8                               ; Untyped                  ;
+; WIDTHAD_A                          ; 8                               ; Untyped                  ;
+; NUMWORDS_A                         ; 256                             ; Untyped                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED                    ; Untyped                  ;
+; ADDRESS_ACLR_A                     ; NONE                            ; Untyped                  ;
+; OUTDATA_ACLR_A                     ; NONE                            ; Untyped                  ;
+; WRCONTROL_ACLR_A                   ; NONE                            ; Untyped                  ;
+; INDATA_ACLR_A                      ; NONE                            ; Untyped                  ;
+; BYTEENA_ACLR_A                     ; NONE                            ; Untyped                  ;
+; WIDTH_B                            ; 8                               ; Untyped                  ;
+; WIDTHAD_B                          ; 8                               ; Untyped                  ;
+; NUMWORDS_B                         ; 256                             ; Untyped                  ;
+; INDATA_REG_B                       ; CLOCK1                          ; Untyped                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                          ; Untyped                  ;
+; RDCONTROL_REG_B                    ; CLOCK1                          ; Untyped                  ;
+; ADDRESS_REG_B                      ; CLOCK0                          ; Untyped                  ;
+; OUTDATA_REG_B                      ; UNREGISTERED                    ; Untyped                  ;
+; BYTEENA_REG_B                      ; CLOCK1                          ; Untyped                  ;
+; INDATA_ACLR_B                      ; NONE                            ; Untyped                  ;
+; WRCONTROL_ACLR_B                   ; NONE                            ; Untyped                  ;
+; ADDRESS_ACLR_B                     ; NONE                            ; Untyped                  ;
+; OUTDATA_ACLR_B                     ; NONE                            ; Untyped                  ;
+; RDCONTROL_ACLR_B                   ; NONE                            ; Untyped                  ;
+; BYTEENA_ACLR_B                     ; NONE                            ; Untyped                  ;
+; WIDTH_BYTEENA_A                    ; 1                               ; Untyped                  ;
+; WIDTH_BYTEENA_B                    ; 1                               ; Untyped                  ;
+; RAM_BLOCK_TYPE                     ; AUTO                            ; Untyped                  ;
+; BYTE_SIZE                          ; 8                               ; Untyped                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                       ; Untyped                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ            ; Untyped                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ            ; Untyped                  ;
+; INIT_FILE                          ; db/FINAL.ram0_RAM_15119.hdl.mif ; Untyped                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A                          ; Untyped                  ;
+; MAXIMUM_DEPTH                      ; 0                               ; Untyped                  ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                          ; Untyped                  ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                          ; Untyped                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                          ; Untyped                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                          ; Untyped                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                 ; Untyped                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                 ; Untyped                  ;
+; ENABLE_ECC                         ; FALSE                           ; Untyped                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                           ; Untyped                  ;
+; WIDTH_ECCSTATUS                    ; 3                               ; Untyped                  ;
+; DEVICE_FAMILY                      ; Cyclone IV E                    ; Untyped                  ;
+; CBXI_PARAMETER                     ; altsyncram_i3g1                 ; Untyped                  ;
++------------------------------------+---------------------------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                           ;
++-------------------------------------------+------------------------------------------------+
+; Name                                      ; Value                                          ;
++-------------------------------------------+------------------------------------------------+
+; Number of entity instances                ; 1                                              ;
+; Entity Instance                           ; DATAPATH:DP|RAM:MEMMODULE|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                      ;
+;     -- WIDTH_A                            ; 8                                              ;
+;     -- NUMWORDS_A                         ; 256                                            ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                   ;
+;     -- WIDTH_B                            ; 8                                              ;
+;     -- NUMWORDS_B                         ; 256                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                      ;
++-------------------------------------------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DATAPATH:DP|AC:ADMODULE|Z_CHECK:ZCHECK"                                                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; OUT  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (8 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND. ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|adder16bit:ADD16b"                                                                                       ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                     ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; A    ; Input  ; Warning  ; Input port expression (8 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "A[15..8]" will be connected to GND. ;
+; B    ; Input  ; Warning  ; Input port expression (8 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "B[15..8]" will be connected to GND. ;
+; sum  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (8 bits) it drives; bit(s) "sum[15..8]" have no fanouts                    ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DATAPATH:DP|AC:ADMODULE"                                                                                                                                                         ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BUS  ; Input ; Warning  ; Input port expression (16 bits) is wider than the input port (8 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DATAPATH:DP|R:RMODULE"                                                                                                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BUS  ; Input ; Warning  ; Input port expression (16 bits) is wider than the input port (8 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DATAPATH:DP|DR:DRMODULE"                                                                                                                                                         ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BUS  ; Input ; Warning  ; Input port expression (16 bits) is wider than the input port (8 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 27                          ;
+; cycloneiii_ff         ; 100                         ;
+;     ENA               ; 56                          ;
+;     plain             ; 44                          ;
+; cycloneiii_lcell_comb ; 253                         ;
+;     arith             ; 30                          ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 8                           ;
+;     normal            ; 223                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 74                          ;
+;         4 data inputs ; 132                         ;
+; cycloneiii_ram_block  ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 11.40                       ;
+; Average LUT depth     ; 6.09                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
+    Info: Processing started: Mon Dec 07 16:57:14 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FINAL -c FINAL
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file cpu.bdf
+    Info (12023): Found entity 1: CPU
+Info (12021): Found 1 design units, including 1 entities, in source file controlstep.v
+    Info (12023): Found entity 1: CONTROL_STEP
+Info (12021): Found 1 design units, including 1 entities, in source file decoder_op.v
+    Info (12023): Found entity 1: decoder_op
+Info (12021): Found 1 design units, including 1 entities, in source file decoder_time.v
+    Info (12023): Found entity 1: decoder_time
+Info (12021): Found 1 design units, including 1 entities, in source file counter_time.v
+    Info (12023): Found entity 1: counter_time
+Info (12021): Found 1 design units, including 1 entities, in source file controlcombo.v
+    Info (12023): Found entity 1: CONTROL_COMB
+Info (12021): Found 1 design units, including 1 entities, in source file ar.v
+    Info (12023): Found entity 1: AR
+Info (12021): Found 1 design units, including 1 entities, in source file pc.v
+    Info (12023): Found entity 1: PC
+Info (12021): Found 1 design units, including 1 entities, in source file dr.v
+    Info (12023): Found entity 1: DR
+Info (12021): Found 1 design units, including 1 entities, in source file tr.v
+    Info (12023): Found entity 1: TR
+Info (12021): Found 1 design units, including 1 entities, in source file ir.v
+    Info (12023): Found entity 1: IR
+Info (12021): Found 1 design units, including 1 entities, in source file r.v
+    Info (12023): Found entity 1: R
+Info (12021): Found 1 design units, including 1 entities, in source file ac.v
+    Info (12023): Found entity 1: AC
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: ALU
+Info (12021): Found 1 design units, including 1 entities, in source file adder16bit.v
+    Info (12023): Found entity 1: adder16bit
+Info (12021): Found 1 design units, including 1 entities, in source file z_check.v
+    Info (12023): Found entity 1: Z_CHECK
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.v
+    Info (12023): Found entity 1: DATAPATH
+Info (12021): Found 1 design units, including 1 entities, in source file ram.v
+    Info (12023): Found entity 1: RAM
+Info (12021): Found 1 design units, including 1 entities, in source file cpu.v
+    Info (12023): Found entity 1: CENTRAL_PROCESSOR
+Info (12021): Found 1 design units, including 1 entities, in source file sevenseg.v
+    Info (12023): Found entity 1: sevenseg
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_8bit.v
+    Info (12023): Found entity 1: BCD_8bit
+Info (12021): Found 1 design units, including 1 entities, in source file muxfour_alus7.v
+    Info (12023): Found entity 1: muxFOUR_ALUS7
+Info (12021): Found 1 design units, including 1 entities, in source file muxthird_alus56.v
+    Info (12023): Found entity 1: muxTHIRD_ALUS56
+Info (12021): Found 1 design units, including 1 entities, in source file muxtwo_alus23.v
+    Info (12023): Found entity 1: muxTWO_ALUS23
+Info (12021): Found 1 design units, including 1 entities, in source file muxone_alus1.v
+    Info (12023): Found entity 1: muxONE_ALUS1
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(33): created implicit net for "T0"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(33): created implicit net for "T1"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(33): created implicit net for "T2"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(33): created implicit net for "T3"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(33): created implicit net for "T4"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(33): created implicit net for "T5"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(33): created implicit net for "T6"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(33): created implicit net for "T7"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "INOP"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "ILDAC"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "ISTAC"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "IMVAC"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "IMOVR"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "IJUMP"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "IJMPZ"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "IJPNZ"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "IADD"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "ISUB"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "IINAC"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "ICLAC"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "IAND"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "IOR"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "IXOR"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(34): created implicit net for "INOT"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(65): created implicit net for "IR_TOCPU"
+Info (12127): Elaborating entity "CENTRAL_PROCESSOR" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at CPU.v(65): object "IR_TOCPU" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at CPU.v(65): truncated value with size 8 to match size of target (1)
+Info (12128): Elaborating entity "CONTROL_STEP" for hierarchy "CONTROL_STEP:CONTROLSTEP"
+Info (12128): Elaborating entity "counter_time" for hierarchy "CONTROL_STEP:CONTROLSTEP|counter_time:Ccounter"
+Warning (10230): Verilog HDL assignment warning at counter_time.v(16): truncated value with size 32 to match size of target (3)
+Info (12128): Elaborating entity "decoder_time" for hierarchy "CONTROL_STEP:CONTROLSTEP|decoder_time:Cdecoder"
+Info (12128): Elaborating entity "decoder_op" for hierarchy "CONTROL_STEP:CONTROLSTEP|decoder_op:Odecoder"
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "INOP", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "ILDAC", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "ISTAC", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "IMVAC", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "IMOVR", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "IJUMP", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "IJMPZ", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "IJPNZ", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "IADD", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "ISUB", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "IINAC", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "ICLAC", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "IAND", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "IOR", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "IXOR", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at decoder_op.v(18): inferring latch(es) for variable "INOT", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "INOT" at decoder_op.v(50)
+Info (10041): Inferred latch for "IXOR" at decoder_op.v(50)
+Info (10041): Inferred latch for "IOR" at decoder_op.v(50)
+Info (10041): Inferred latch for "IAND" at decoder_op.v(50)
+Info (10041): Inferred latch for "ICLAC" at decoder_op.v(50)
+Info (10041): Inferred latch for "IINAC" at decoder_op.v(50)
+Info (10041): Inferred latch for "ISUB" at decoder_op.v(50)
+Info (10041): Inferred latch for "IADD" at decoder_op.v(50)
+Info (10041): Inferred latch for "IJPNZ" at decoder_op.v(50)
+Info (10041): Inferred latch for "IJMPZ" at decoder_op.v(50)
+Info (10041): Inferred latch for "IJUMP" at decoder_op.v(50)
+Info (10041): Inferred latch for "IMOVR" at decoder_op.v(50)
+Info (10041): Inferred latch for "IMVAC" at decoder_op.v(50)
+Info (10041): Inferred latch for "ISTAC" at decoder_op.v(50)
+Info (10041): Inferred latch for "ILDAC" at decoder_op.v(50)
+Info (10041): Inferred latch for "INOP" at decoder_op.v(50)
+Info (12128): Elaborating entity "CONTROL_COMB" for hierarchy "CONTROL_COMB:CU"
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "PC_RESET", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "AR_LOAD", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "AR_INC", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "PC_BUS", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "PC_LOAD", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "PC_INC", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "DR_BUS_H", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "DR_BUS_L", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "DR_LOAD", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "TR_BUS", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "TR_LOAD", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "IR_LOAD", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "R_BUS", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "R_LOAD", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "AC_BUS", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "AC_LOAD", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "MEMBUS", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "BUSMEM", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "WE", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "ALUS7", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "ALUS6", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "ALUS5", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "ALUS4", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "ALUS3", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "ALUS2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "ALUS1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at CONTROLCOMBO.v(55): inferring latch(es) for variable "SOFT_RESET", which holds its previous value in one or more paths through the always construct
+Info (12128): Elaborating entity "DATAPATH" for hierarchy "DATAPATH:DP"
+Info (12128): Elaborating entity "AR" for hierarchy "DATAPATH:DP|AR:ARMODULE"
+Warning (10230): Verilog HDL assignment warning at AR.v(17): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "PC" for hierarchy "DATAPATH:DP|PC:PCMODULE"
+Warning (10230): Verilog HDL assignment warning at PC.v(21): truncated value with size 32 to match size of target (16)
+Warning (10240): Verilog HDL Always Construct warning at PC.v(29): inferring latch(es) for variable "PC_OUT", which holds its previous value in one or more paths through the always construct
+Info (12128): Elaborating entity "DR" for hierarchy "DATAPATH:DP|DR:DRMODULE"
+Warning (10240): Verilog HDL Always Construct warning at DR.v(22): inferring latch(es) for variable "DR_OUT_H", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DR.v(22): inferring latch(es) for variable "DR_OUT_L", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "DR_OUT_L[0]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_L[1]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_L[2]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_L[3]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_L[4]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_L[5]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_L[6]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_L[7]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_H[0]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_H[1]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_H[2]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_H[3]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_H[4]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_H[5]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_H[6]" at DR.v(27)
+Info (10041): Inferred latch for "DR_OUT_H[7]" at DR.v(27)
+Info (12128): Elaborating entity "TR" for hierarchy "DATAPATH:DP|TR:TRMODULE"
+Warning (10240): Verilog HDL Always Construct warning at TR.v(22): inferring latch(es) for variable "TR_OUT", which holds its previous value in one or more paths through the always construct
+Info (12128): Elaborating entity "IR" for hierarchy "DATAPATH:DP|IR:IRMODULE"
+Info (12128): Elaborating entity "R" for hierarchy "DATAPATH:DP|R:RMODULE"
+Warning (10240): Verilog HDL Always Construct warning at R.v(22): inferring latch(es) for variable "R_OUT", which holds its previous value in one or more paths through the always construct
+Info (12128): Elaborating entity "AC" for hierarchy "DATAPATH:DP|AC:ADMODULE"
+Warning (10230): Verilog HDL assignment warning at AC.v(22): truncated value with size 8 to match size of target (1)
+Warning (10240): Verilog HDL Always Construct warning at AC.v(34): inferring latch(es) for variable "AC_OUT", which holds its previous value in one or more paths through the always construct
+Info (12128): Elaborating entity "ALU" for hierarchy "DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD"
+Info (12128): Elaborating entity "muxONE_ALUS1" for hierarchy "DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxONE_ALUS1:MUX1"
+Info (12128): Elaborating entity "muxTWO_ALUS23" for hierarchy "DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2"
+Warning (10199): Verilog HDL Case Statement warning at muxTWO_ALUS23.v(17): case item expression never matches the case expression
+Warning (10270): Verilog HDL Case Statement warning at muxTWO_ALUS23.v(14): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at muxTWO_ALUS23.v(14): inferring latch(es) for variable "OUT", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "OUT[0]" at muxTWO_ALUS23.v(14)
+Info (10041): Inferred latch for "OUT[1]" at muxTWO_ALUS23.v(14)
+Info (10041): Inferred latch for "OUT[2]" at muxTWO_ALUS23.v(14)
+Info (10041): Inferred latch for "OUT[3]" at muxTWO_ALUS23.v(14)
+Info (10041): Inferred latch for "OUT[4]" at muxTWO_ALUS23.v(14)
+Info (10041): Inferred latch for "OUT[5]" at muxTWO_ALUS23.v(14)
+Info (10041): Inferred latch for "OUT[6]" at muxTWO_ALUS23.v(14)
+Info (10041): Inferred latch for "OUT[7]" at muxTWO_ALUS23.v(14)
+Info (12128): Elaborating entity "adder16bit" for hierarchy "DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|adder16bit:ADD16b"
+Warning (10235): Verilog HDL Always Construct warning at adder16bit.v(7): variable "CIN" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "muxTHIRD_ALUS56" for hierarchy "DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3"
+Warning (10199): Verilog HDL Case Statement warning at muxTHIRD_ALUS56.v(18): case item expression never matches the case expression
+Warning (10199): Verilog HDL Case Statement warning at muxTHIRD_ALUS56.v(19): case item expression never matches the case expression
+Warning (10270): Verilog HDL Case Statement warning at muxTHIRD_ALUS56.v(15): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at muxTHIRD_ALUS56.v(15): inferring latch(es) for variable "OUT", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "OUT[0]" at muxTHIRD_ALUS56.v(15)
+Info (10041): Inferred latch for "OUT[1]" at muxTHIRD_ALUS56.v(15)
+Info (10041): Inferred latch for "OUT[2]" at muxTHIRD_ALUS56.v(15)
+Info (10041): Inferred latch for "OUT[3]" at muxTHIRD_ALUS56.v(15)
+Info (10041): Inferred latch for "OUT[4]" at muxTHIRD_ALUS56.v(15)
+Info (10041): Inferred latch for "OUT[5]" at muxTHIRD_ALUS56.v(15)
+Info (10041): Inferred latch for "OUT[6]" at muxTHIRD_ALUS56.v(15)
+Info (10041): Inferred latch for "OUT[7]" at muxTHIRD_ALUS56.v(15)
+Info (12128): Elaborating entity "muxFOUR_ALUS7" for hierarchy "DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxFOUR_ALUS7:MUX4"
+Info (12128): Elaborating entity "Z_CHECK" for hierarchy "DATAPATH:DP|AC:ADMODULE|Z_CHECK:ZCHECK"
+Info (12128): Elaborating entity "RAM" for hierarchy "DATAPATH:DP|RAM:MEMMODULE"
+Warning (10850): Verilog HDL warning at RAM.v(11): number of words (255) in memory file does not match the number of elements in the address range [0:255]
+Warning (10235): Verilog HDL Always Construct warning at RAM.v(29): variable "we" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RAM.v(31): variable "address" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at RAM.v(27): inferring latch(es) for variable "data_out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "data_out[0]" at RAM.v(29)
+Info (10041): Inferred latch for "data_out[1]" at RAM.v(29)
+Info (10041): Inferred latch for "data_out[2]" at RAM.v(29)
+Info (10041): Inferred latch for "data_out[3]" at RAM.v(29)
+Info (10041): Inferred latch for "data_out[4]" at RAM.v(29)
+Info (10041): Inferred latch for "data_out[5]" at RAM.v(29)
+Info (10041): Inferred latch for "data_out[6]" at RAM.v(29)
+Info (10041): Inferred latch for "data_out[7]" at RAM.v(29)
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[15]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[14]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[13]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[12]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[11]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[10]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[9]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[8]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[7]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[6]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[5]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[4]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[3]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[2]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[1]" into a selector
+    Warning (13048): Converted tri-state node "DATAPATH:DP|BUS[0]" into a selector
+    Warning (13049): Converted tri-state buffer "DATAPATH:DP|AR:ARMODULE|AR_OUT[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DATAPATH:DP|AR:ARMODULE|AR_OUT[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DATAPATH:DP|AR:ARMODULE|AR_OUT[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DATAPATH:DP|AR:ARMODULE|AR_OUT[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DATAPATH:DP|AR:ARMODULE|AR_OUT[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DATAPATH:DP|AR:ARMODULE|AR_OUT[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DATAPATH:DP|AR:ARMODULE|AR_OUT[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DATAPATH:DP|AR:ARMODULE|AR_OUT[7]" feeding internal logic into a wire
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/CPE/FINAL/db/FINAL.ram0_RAM_15119.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (276020): Inferred RAM node "DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_L[0]_184" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_L[0]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_L[1]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_L[2]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_L[3]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_L[4]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_L[5]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_L[6]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_L[7]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_H[0]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_H[1]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_H[2]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_H[3]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_H[4]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_H[5]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_H[6]$latch" is permanently enabled
+Warning (14026): LATCH primitive "DATAPATH:DP|DR:DRMODULE|DR_OUT_H[7]$latch" is permanently enabled
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "DATAPATH:DP|RAM:MEMMODULE|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter NUMWORDS_A set to 256
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 8
+        Info (286033): Parameter NUMWORDS_B set to 256
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/FINAL.ram0_RAM_15119.hdl.mif
+Info (12130): Elaborated megafunction instantiation "DATAPATH:DP|RAM:MEMMODULE|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "DATAPATH:DP|RAM:MEMMODULE|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "8"
+    Info (12134): Parameter "NUMWORDS_A" = "256"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "8"
+    Info (12134): Parameter "NUMWORDS_B" = "256"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/FINAL.ram0_RAM_15119.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i3g1.tdf
+    Info (12023): Found entity 1: altsyncram_i3g1
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTWO_ALUS23:MUX2|OUT[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Warning (13012): Latch DATAPATH:DP|AC:ADMODULE|ALU:ALUMOD|muxTHIRD_ALUS56:MUX3|OUT[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FULL_RESET
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file D:/CPE/FINAL/output_files/FINAL.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 368 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 24 output pins
+    Info (21061): Implemented 333 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 170 warnings
+    Info: Peak virtual memory: 696 megabytes
+    Info: Processing ended: Mon Dec 07 16:57:32 2015
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:19
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/CPE/FINAL/output_files/FINAL.map.smsg.
+
+

@@ -1,0 +1,28 @@
+module TR(TR_OUT, BUS, TR_BUS, TR_LOAD, CLK);
+
+	output reg [15:0] TR_OUT; 
+
+	input [7:0] DR_FEED; 
+	input CLK, TR_LOAD, TR_BUS;
+	
+	reg [7:0] DR_temp;
+	
+	always @(posedge CLK)
+	begin
+	
+		if(DR_LOAD)
+		begin 
+			DR_temp <= BUS[7:0];
+		end
+	
+	end
+	
+	always
+	begin
+		if(DR_BUS)
+			DR_OUT <= DR_temp;
+		else if(!DR_BUS)
+			DR_OUT = 8'b0;
+	end
+	
+endmodule 

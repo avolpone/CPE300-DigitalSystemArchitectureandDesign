@@ -1,0 +1,28 @@
+module DR(DR_OUT, BUS, DR_BUS, DR_LOAD, CLK);
+
+	output reg [15:0] PC_OUT; 
+
+	input [15:0] BUS; 
+	input CLK, PC_LOAD, PC_INC, PC_BUS;
+	
+	reg [15:0] PC_temp;
+	
+	always @(posedge CLK)
+	begin
+	
+		if(DR_LOAD)
+		begin 
+			PC_temp <= BUS[15:0];
+		end
+	
+	end
+	
+	always
+	begin
+		if(PC_BUS)
+			PC_OUT <= PC_temp;
+		else if(!PC_BUS)
+			PC_OUT = 16'b0;
+	end
+	
+endmodule 

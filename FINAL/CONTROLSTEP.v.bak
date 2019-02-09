@@ -1,0 +1,9 @@
+module CONTROL_STEP( T, INC, CLK, CLEAR );
+
+input CLK, INC, CLEAR;
+output reg [7:0] T;
+
+wire [2:0] TIME;
+
+counter time_counter	( COUNT, E, CLK, CLEAR );
+decoder CSdecoder		( T, COUNT );

@@ -1,0 +1,94 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/volpone/Documents/CPE 300/FINAL/simulation/qsim
+vCENTRAL_PROCESSOR
+!s110 1449536381
+!i10b 1
+!s100 ?SjC7]]eTg2TDZfEYHj?73
+InZ4V]YV5jV@@H66EV3`O]2
+Z0 V`JN@9S9cnhjKRR_L]QIcM3
+Z1 dD:/CPE/FINAL/simulation/qsim
+w1449536378
+8FINAL.vo
+FFINAL.vo
+L0 32
+Z2 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1449536381.533000
+!s107 FINAL.vo|
+!s90 -work|work|FINAL.vo|
+!i113 1
+Z3 o-work work
+n@c@e@n@t@r@a@l_@p@r@o@c@e@s@s@o@r
+vCENTRAL_PROCESSOR_vlg_check_tst
+Z4 !s110 1449536385
+!i10b 1
+!s100 NRmaLdOdHLA^z7@8V]BB43
+IIl5h=Xeco]b7c5PIf[FZO3
+R0
+R1
+Z5 w1449536376
+Z6 8CPU.vwf.vt
+Z7 FCPU.vwf.vt
+L0 62
+R2
+r1
+!s85 0
+31
+Z8 !s108 1449536383.738000
+Z9 !s107 CPU.vwf.vt|
+Z10 !s90 -work|work|CPU.vwf.vt|
+!i113 1
+R3
+n@c@e@n@t@r@a@l_@p@r@o@c@e@s@s@o@r_vlg_check_tst
+vCENTRAL_PROCESSOR_vlg_sample_tst
+R4
+!i10b 1
+!s100 m5SJS>oemV>z_Yl0RU86P2
+I[G2Y@HZO4@jE5eNI<FXGD3
+R0
+R1
+R5
+R6
+R7
+L0 30
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R3
+n@c@e@n@t@r@a@l_@p@r@o@c@e@s@s@o@r_vlg_sample_tst
+vCENTRAL_PROCESSOR_vlg_vec_tst
+R4
+!i10b 1
+!s100 N^;N>WNg4]5eOSNJ::A;?0
+IYOIhIiXFIUmdWfAkI5eNH3
+R0
+R1
+R5
+R6
+R7
+L0 578
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R3
+n@c@e@n@t@r@a@l_@p@r@o@c@e@s@s@o@r_vlg_vec_tst

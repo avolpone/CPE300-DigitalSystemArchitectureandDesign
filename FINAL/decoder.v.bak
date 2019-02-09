@@ -1,0 +1,29 @@
+//-----------------------------------------------------
+// Design Name : decoder_using_case
+// File Name   : decoder_using_case.v
+// Function    : decoder using case
+// Coder       : Deepak Kumar Tala
+//-----------------------------------------------------
+module decoder( T, COUNT );
+
+input [2:0] COUNT;
+output reg [7:0] T;
+
+initial
+	T = 3'b0;
+
+always
+begin
+    case (COUNT)
+      3'b000 : T = 8'b00000001;
+      3'b001 : T = 8'b00000010;
+      3'b010 : T = 8'b00000101;
+      3'b011 : T = 8'b00001000;
+      3'b100 : T = 8'b00010001;
+      3'b101 : T = 8'b00100010;
+      3'b110 : T = 8'b01000000;
+      3'b111 : T = 8'b10000000;
+    endcase
+end
+
+endmodule

@@ -1,0 +1,22 @@
+module AR(aout, bout, cout, cin, a, b, clk);
+
+	output cout; 
+	output [15:0] aout; 
+	output [15:0] bout; 
+	input cin; 
+	input [15:0] a; 
+	input [15:0] b;
+	input clk;
+	
+	reg cout;
+	reg [15:0] aout;
+	reg [15:0] bout;
+	
+	always @(posedge clk)
+	begin
+	aout[15:0] <= a[15:0];
+	bout[15:0] <= b[15:0];
+	cout <= cin;
+	end
+	
+endmodule 

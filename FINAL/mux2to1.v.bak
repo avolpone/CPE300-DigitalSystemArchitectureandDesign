@@ -1,0 +1,19 @@
+module  mux2to1(
+ZERO,
+ONE, 
+SEL, 
+OUT);
+
+input din_0, din_1, sel ;
+output OUT;
+reg  OUT;
+
+always @ (*)
+begin
+ case(SEL) 
+    1'b0 : OUT = ZERO;
+    1'b1 : OUT = ONE;
+ endcase 
+end
+
+endmodule //End Of Module mux

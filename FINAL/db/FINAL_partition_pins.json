@@ -1,0 +1,117 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "AC_TOCPU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "AC_TOCPU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "AC_TOCPU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "AC_TOCPU[3]",
+					"strict" : false
+				},
+				{
+					"name" : "AC_TOCPU[4]",
+					"strict" : false
+				},
+				{
+					"name" : "AC_TOCPU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "AC_TOCPU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "AC_TOCPU[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[8]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[9]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[10]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[11]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[12]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[13]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[14]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_TOCPU[15]",
+					"strict" : false
+				},
+				{
+					"name" : "FULL_RESET",
+					"strict" : false
+				},
+				{
+					"name" : "START",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

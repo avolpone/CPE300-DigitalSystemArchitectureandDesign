@@ -1,0 +1,17 @@
+module CONTROL_COMB( T0, T1, T2, T3, T4, T5, T6, T7, INC, 
+INOP, ILDAC, ISTAC, IMVAC, IMOVR, IJUMP, IJMPZ, IJPNZ, IADD, ISUB, IINAC, ICLAC, IAND, IOR, IXOR, INOT, IR, 
+CLEAR, CLK);
+
+input [7:0] IR;
+input CLK, INC, CLEAR;
+output T0, T1, T2, T3, T4, T5, T6, T7;
+output INOP, ILDAC, ISTAC, IMVAC, IMOVR, IJUMP, IJMPZ, IJPNZ, IADD, ISUB, IINAC, ICLAC, IAND, IOR, IXOR, INOT;
+
+wire [2:0] COUNT;
+
+counter_time Ccounter	( COUNT, INC, CLK, CLEAR );
+decoder_time Cdecoder	( T0, T1, T2, T3, T4, T5, T6, T7, COUNT );
+
+decoder_op Odecoder     ( INOP, ILDAC, ISTAC, IMVAC, IMOVR, IJUMP, IJMPZ, IJPNZ, IADD, ISUB, IINAC, ICLAC, IAND, IOR, IXOR, INOT, IR );
+
+endmodule 

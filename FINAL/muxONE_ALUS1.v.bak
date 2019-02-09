@@ -1,0 +1,19 @@
+module  muxONE_ALUS1(
+BUS, 
+ALUS1,
+OUT);
+
+input [7:0] AC;
+input ALUS1;
+
+output reg [7:0] OUT;
+
+always @(*)
+begin
+ case(ALUS1) 
+    0 : OUT = 8'b0;
+    1 : OUT = AC;
+ endcase 
+end
+
+endmodule 

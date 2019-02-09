@@ -1,0 +1,8 @@
+module Z_CHECK(OUT, IN);
+
+input [7:0] IN;
+output [7:0] OUT;
+
+wire [7:0] OUT;
+
+assign OUT = ~^(IN);
